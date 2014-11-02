@@ -317,7 +317,7 @@ class Messenger
      * @link http://developer.beanstream.com/documentation/analyze-payments/search-specific-criteria/
      * 
      * @param array[optional] $data Filtering data, the default values
-     *  name: 'TransHistoryMinimal'
+     *  name: 'Search'
      *  start_date: now - 1 day OR end_date - 1 day
      *  end_date: start_date + 1 day
      *  start_row: 1
@@ -336,7 +336,7 @@ class Messenger
         $end_date = $end_dt->format('c');
         
         $res = $this->request('reports', $data + array(
-            'name' => 'TransHistoryMinimal',
+            'name' => 'Search',
             'start_date' => $start_date,
             'end_date' => $end_date,
             'start_row' => 1,
