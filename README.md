@@ -68,10 +68,18 @@ try {
 }
 ```
 
-## Authentication
+## Tips
+
+### Authentication
 
 Beansteam defines separate API access passcodes for payment, profile and search requests. It is possible though
 to use same value for all of them, so one should either initialize seperate *\Beanstream\Messanger* instance
 for each request type or configure API passcodes in Beansteam merchant panel to be the same (see
 *administration -> account settings -> order settings* for payment and search passcodes,
 *configuration -> payment profile configuration* for profile passcode).
+
+### Billing Address Province
+
+Beanstream requires *province* filed submitted along with *billing* data to be two-letter code. It only requires it when
+spedified *country* is *US* or *CA*, for other country codes set it to *--* even if corresponding country does have states
+or provinces.
