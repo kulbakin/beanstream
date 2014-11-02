@@ -36,6 +36,7 @@ The sample below is an equivalent of original [example](http://developer.beanstr
 from Beanstream.
 
 ```php
+<?php
 $bm = new \Beanstream\Messanger(YOUR_MERCHANT_ID, YOUR_API_PASSCODE);
 
 try {
