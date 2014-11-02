@@ -311,4 +311,38 @@ class Messenger
         
         return true;
     }
+    
+    /**
+     * Search transactions
+     * @link http://developer.beanstream.com/documentation/analyze-payments/search-specific-criteria/
+     * 
+     * @param array[optional] $data Filtering data, the default values
+     *  name: 'TransHistoryMinimal'
+     *  start_date: now - 1 day OR end_date - 1 day
+     *  end_date: start_date + 1 day
+     *  start_row: 1
+     *  end_row: start_row + 9
+     *  i.e. by default function returns first 10 transactions for the past 24h
+     * @return array Transactions found
+     */
+    public function search($data = array())
+    {
+        // compose default values for date filter
+        $start_dt = new \DateTime(isset($data['end_date']) ? $data['end_date'] : null);
+        $start_dt->modify('-1 day +1 second');
+        $start_date = $start_dt->format('c');
+        $end_dt = new \DateTime(isset($data['start_date']) ? $data['start_date'] : $start_date);
+        $end_dt->modify('+1 day');
+        $end_date = $end_dt->format('c');
+        
+        $res = $this->request('reports', $data + array(
+            'name' => 'TransHistoryMinimal',
+            'start_date' => $start_date,
+            'end_date' => $end_date,
+            'start_row' => 1,
+            'end_row' => 9 + (isset($data['start_row']) ? $data['start_row'] : 1),
+        ), 'POST');
+        
+        return $res['records'];
+    }
 }

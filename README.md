@@ -67,3 +67,11 @@ try {
      */
 }
 ```
+
+## Authentication
+
+Beansteam defines separate API access passcodes for payment, profile and search requests. It is possible though
+to use same value for all of them, so one should either initialize seperate *\Beanstream\Messanger* instance
+for each request type or configure API passcodes in Beansteam merchant panel to be the same (see
+*administration -> account settings -> order settings* for payment and search passcodes,
+*configuration -> payment profile configuration* for profile passcode).
