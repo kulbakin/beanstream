@@ -37,7 +37,7 @@ from Beanstream.
 
 ```php
 <?php
-$bm = new \Beanstream\Messanger(YOUR_MERCHANT_ID, YOUR_API_PASSCODE);
+$bm = new \Beanstream\Messenger(YOUR_MERCHANT_ID, YOUR_API_PASSCODE);
 
 try {
     $ts = $bm->payment(array(
@@ -52,7 +52,7 @@ try {
             'cvd' => '123'
         )
     ));
-    
+
     /*
      * Handle successful transaction, payment method returns
      * transaction details as result, so $ts contains that data
