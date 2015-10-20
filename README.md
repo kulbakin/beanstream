@@ -81,5 +81,5 @@ for each request type or configure API passcodes in Beansteam merchant panel to 
 ### Billing Address Province
 
 Beanstream requires *province* field submitted along with *billing* data to be two-letter code. It only requires it when
-spedified *country* is *US* or *CA*, for other country codes set it to *--* even if corresponding country does have states
+specified *country* is *US* or *CA*, for other country codes set it to *--* even if corresponding country does have states
 or provinces.
