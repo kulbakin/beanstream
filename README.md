@@ -37,7 +37,7 @@ from Beanstream.
 
 ```php
 <?php
-$bm = new \Beanstream\Messenger(YOUR_MERCHANT_ID, YOUR_API_PASSCODE);
+$bm = new \Beanstream\Messenger(YOUR_MERCHANT_ID, YOUR_API_KEY);
 
 try {
     $ts = $bm->payment(array(
@@ -72,11 +72,10 @@ try {
 
 ### Authentication
 
-Beansteam defines separate API access passcodes for payment, profile and search requests. It is possible though
+Beansteam defines separate API access keys for payment, profile and search requests. It is possible though
 to use the same value for all of them, so one should either initialize seperate *\Beanstream\Messanger* instance
-for each request type or configure API passcodes in Beansteam merchant panel to be the same (see
-*administration -> account settings -> order settings* for payment and search passcodes,
-*configuration -> payment profile configuration* for profile passcode).
+for each request type or configure API passcodes in Beansteam merchant panel to be the same, see 
+[Generate API Keys](https://developer.beanstream.com/docs/guides/merchant_quickstart/#2.-generate-api-keys-c7a8d316a97aa5ac0136c1b6de755512).
 
 ### Billing Address Province
 
